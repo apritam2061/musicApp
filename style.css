@@ -1,0 +1,112 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "poppins",sans-serif;
+}
+body
+{
+    display: flex; 
+}
+
+.menuBox
+{
+    height: 100vh;
+    width: 25%;
+    align-self: flex-start;
+    background-color: white;
+    border-right: 2px solid black;
+    overflow: hidden;
+    white-space: nowrap;
+    overflow-y: auto;
+}
+.searchBar
+{
+    all: unset;
+    height: 35px;
+    border: 2px solid black;
+    padding-left: 10px;
+    border-radius: 20px;
+    width: 75%;
+    margin: 10px 2px 10px 5px;
+   
+}
+.searchIcon
+{
+    display: inline-block;
+    height: 35px;
+    width: 35px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: rebeccapurple;
+    cursor: pointer;
+}
+.searchIcon:active
+{
+    border: 1.5px rgb(184, 18, 123) solid;
+}
+.searchIcon-inner
+{
+     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fa-magnifying-glass
+{
+    font-size: 1.5rem;
+    color: white;
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
+#top
+{
+    font-size: 2rem;
+    text-align: center;
+    background-color: #131921;
+    color: white;
+    padding: 0px 5px 5px 0px;
+}
+.menuBox ul
+{
+    all: unset;
+}
+
+.song-list
+{
+    font-size: 1.2rem;
+    padding: 7px 0px 7px 10px;;
+    color: black;
+    border-top: 1px solid black;
+    cursor: pointer;
+}
+.song-list:hover
+{
+    background-color:#222F3E ;
+    color: white;
+}
+.Artist
+{
+    font-size: 0.6rem;
+    margin-top: 2px;
+}
+
+.music-area
+{
+    align-self: flex-end;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e0e0e0;
+
+}
+.music-area-card
+{
+    background-color: white;
+    padding: 20px;
+    width: 40%;
+    border-radius: 5px;
+    border: 2px solid black;
+}
