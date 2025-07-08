@@ -6,7 +6,7 @@
 }
 body
 {
-    display: flex; 
+    display: flex;
 }
 .whole
 {
@@ -84,6 +84,7 @@ body
     color: black;
     border-top: 1px solid black;
     cursor: pointer;
+    background-color: #D3D3D3;
 }
 .song-list:hover
 {
@@ -104,7 +105,7 @@ body
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: linear-gradient(to bottom, #f1f4f9, #dff1ff);
+    background: linear-gradient(to bottom, #f1f4f9, #dff1ff);
 
 }
 .music-area-card
@@ -112,10 +113,9 @@ body
     background-color: white;
     padding: 30px;
     width: 40%;
-    border-radius: 5px;
-    border: 2px solid black;
+    border-radius: 20px;
     background: linear-gradient(to right,#87d3e2,#ebd4a9);
-    
+    box-shadow: 0 1rem 3rem rgb(94, 92, 92);
 }
 /* .photo
 {
@@ -130,13 +130,15 @@ body
 } */
 .song-image
 {
-    width: 100%;
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin:  0px auto 0px;
     aspect-ratio: 1/1;
     box-shadow: 0 1rem 3rem rgb(56, 55, 55);
     border-radius: 50%;
-    
     border: 6px dotted transparent;
-
 }
 .song-image-animate
 {
@@ -151,4 +153,11 @@ body
     to{
         transform: rotate(360deg);
     }
+}
+
+.song-audio
+{
+    display: block;
+    margin:  0px auto 0px;
+    margin-top: 20px;
 }
