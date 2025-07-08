@@ -8,6 +8,10 @@ body
 {
     display: flex; 
 }
+.whole
+{
+    display: flex;
+}
 
 .menuBox
 {
@@ -44,6 +48,7 @@ body
 .searchIcon:active
 {
     border: 1.5px rgb(184, 18, 123) solid;
+    filter: blur(1px);
 }
 .searchIcon-inner
 {
@@ -99,14 +104,51 @@ body
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #e0e0e0;
+    background-color: linear-gradient(to bottom, #f1f4f9, #dff1ff);
 
 }
 .music-area-card
 {
     background-color: white;
-    padding: 20px;
+    padding: 30px;
     width: 40%;
     border-radius: 5px;
     border: 2px solid black;
+    background: linear-gradient(to right,#87d3e2,#ebd4a9);
+    
+}
+/* .photo
+{
+    background-image: url(photos/blankSpace.jpeg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    aspect-ratio: 1/1;
+    box-shadow: 0 1rem 3rem rgb(56, 55, 55);
+    border-radius: 50%;
+} */
+.song-image
+{
+    width: 100%;
+    aspect-ratio: 1/1;
+    box-shadow: 0 1rem 3rem rgb(56, 55, 55);
+    border-radius: 50%;
+    
+    border: 6px dotted transparent;
+
+}
+.song-image-animate
+{
+    animation: rotation 6s linear infinite;
+
+}
+@keyframes rotation
+{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
 }
