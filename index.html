@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <title>Document</title>
 </head>
@@ -15,10 +17,10 @@
 <body>
     <div class="menuBox">
         <p id="top">Songs</p>
-        <input type="text" placeholder="Search Song " class="searchBar"/>
+        <input type="text" placeholder="Search Song " class="searchBar" />
         <div class="searchIcon">
-             <i class="fa-solid fa-magnifying-glass"></i>
-           
+            <i class="fa-solid fa-magnifying-glass"></i>
+
         </div>
         <ul>
             <li class="song-list">
@@ -108,15 +110,23 @@
         </ul>
     </div>
     <div class="music-area">
-    
+
         <div class="music-area-card">
             <!-- <div class="photo"> -->
-            <img src="photos/newRules.jpeg" alt="blankSpace" class="song-image">
+            <img src="photos/Blankspace.jpeg" alt="blankSpace" class="song-image">
             <!-- </div> -->
-             <audio controls src="songss/Taylor Swift-Blank Space.mp3" class="song-audio"></audio>
+            <audio controls src="songss/Taylor Swift-Blank Space.mp3" class="song-audio"></audio>
+            <input type="range" value="0" id="audio-range">
+            <div class="audio-controls">
+                <div class="reverse"></div>
+                <div class="play-pause"></div>
+                <div class="forward"></div>
+            </div>
 
-        
         </div>
+
+
+    </div>
     </div>
 
     <script src="script.js"></script>

@@ -138,7 +138,7 @@ body
     aspect-ratio: 1/1;
     box-shadow: 0 1rem 3rem rgb(56, 55, 55);
     border-radius: 50%;
-    border: 6px dotted transparent;
+    border: 6px solid transparent;
 }
 .song-image-animate
 {
@@ -160,4 +160,14 @@ body
     display: block;
     margin:  0px auto 0px;
     margin-top: 20px;
+}
+
+#audio-range
+{
+    display: block;
+    width: 100%;
+    margin: 0px auto 0px;
+    background: #f53192;
+    border-radius: 4px;
+    cursor: pointer;
 }
