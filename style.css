@@ -23,6 +23,7 @@ body
     overflow: hidden;
     white-space: nowrap;
     overflow-y: auto;
+    background-color: #D3D3D3;
 }
 .searchBar
 {
@@ -33,28 +34,20 @@ body
     border-radius: 20px;
     width: 75%;
     margin: 10px 2px 10px 5px;
-   
+    background-color: white;
 }
 .searchIcon
 {
     display: inline-block;
     height: 35px;
     width: 35px;
-    border: 1px solid black;
     border-radius: 20px;
-    background-color: rebeccapurple;
+    background-color: #f53192;
     cursor: pointer;
 }
 .searchIcon:active
 {
-    border: 1.5px rgb(184, 18, 123) solid;
-    filter: blur(1px);
-}
-.searchIcon-inner
-{
-     display: flex;
-    align-items: center;
-    justify-content: center;
+background-color: rebeccapurple;
 }
 .fa-magnifying-glass
 {
@@ -84,7 +77,7 @@ body
     color: black;
     border-top: 1px solid black;
     cursor: pointer;
-    background-color: #D3D3D3;
+    /* background-color: #D3D3D3; */
 }
 .song-list:hover
 {
@@ -117,17 +110,6 @@ body
     background: linear-gradient(to right,#87d3e2,#ebd4a9);
     box-shadow: 0 1rem 3rem rgb(94, 92, 92);
 }
-/* .photo
-{
-    background-image: url(photos/blankSpace.jpeg);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    aspect-ratio: 1/1;
-    box-shadow: 0 1rem 3rem rgb(56, 55, 55);
-    border-radius: 50%;
-} */
 .song-image
 {
     width: 80%;
@@ -136,13 +118,18 @@ body
     display: block;
     margin:  0px auto 0px;
     aspect-ratio: 1/1;
-    box-shadow: 0 1rem 3rem rgb(56, 55, 55);
+    box-shadow: 0 1rem 3rem rgb(133, 132, 132);
     border-radius: 50%;
     border: 6px solid transparent;
+    transition: transform 0.3s ease ;
 }
-.song-image-animate
+.song-image-zoom-animate
 {
-    animation: rotation 6s linear infinite;
+    transform: scale3d(1.1, 1.1, 1);
+}
+.song-image-rotate-animate
+{
+    animation: rotation 30s linear infinite;
 
 }
 @keyframes rotation
@@ -154,6 +141,22 @@ body
         transform: rotate(360deg);
     }
 }
+#music-area-song-name
+{
+    color: rgba(255,255,255,1);
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    height: 35px;
+}
+#music-area-artist
+{
+    color: rgba(255,255,255,0.8);
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 0px;
+}
 
 .song-audio
 {
@@ -164,10 +167,83 @@ body
 
 #audio-range
 {
+    appearance: none;
     display: block;
-    width: 100%;
-    margin: 0px auto 0px;
+    width: 70%;
+    height: 6px;
+    margin: 20px auto 10px;
     background: #f53192;
-    border-radius: 4px;
+    border-radius: 20px;
     cursor: pointer;
+}
+#audio-range::-webkit-slider-thumb
+{
+    appearance: none;
+    background: #f53192;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid white;
+    box-shadow: 0 1rem 3rem rgb(56, 55, 55);
+}
+#audio-range::-webkit-slider-thumb:hover
+{
+    width: 20px;
+    height: 20px;  
+    border-width: 2px;  
+}
+
+.time-display {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.8rem;
+    color: #333;
+}
+#slash
+{
+    margin: 0px 1px 0px 1px;
+}
+
+.loop
+{
+    color: black;
+    cursor: pointer;
+    margin-right: 10px;
+    filter: opacity(0.5);
+}
+.loop-active
+{
+    filter: opacity(1);
+}
+
+.audio-controls
+{
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    font-size: 1rem;
+}
+.audio-controls div
+{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #f53192;
+    cursor: pointer;
+    box-shadow: 0 1rem 3rem rgb(139, 138, 138);
+    margin: 20px 0px 20px 0px;
+}
+.audio-controls .play-pause 
+{
+    font-size: 1.2rem;
+    transform: scale(1.5);
+    color: white;
+    background-color: #f53192;
+
 }

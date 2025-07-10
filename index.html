@@ -28,24 +28,24 @@
                 <p class="Artist">Artist: Tyler Swift</p>
             </li>
             <li class="song-list">
-                Summertime Sadness
+                Young and Beautiful
                 <p class="Artist">Artist: Lana Del Rey</p>
             </li>
             <li class="song-list">
-                Alone
-                <p class="Artist">Artist: Marshmello</p>
+                Rockstar
+                <p class="Artist">Artist: Post Malone</p>
             </li>
             <li class="song-list">
-                Closer
-                <p class="Artist">Artist: The Chainsmokers</p>
+                Vegas
+                <p class="Artist">Artist: Joseline Hernandez</p>
             </li>
             <li class="song-list">
                 God's Plan
                 <p class="Artist">Artist: Drake</p>
             </li>
             <li class="song-list">
-                Baby
-                <p class="Artist">Artist: Justin Bieber</p>
+                Tokyo Drift
+                <p class="Artist">Artist: Teriyaki Boyz</p>
             </li>
             <li class="song-list">
                 Taki Taki
@@ -56,7 +56,7 @@
                 <p class="Artist">Artist: Sadie Jean</p>
             </li>
             <li class="song-list">
-                Shape of You
+                Perfect
                 <p class="Artist">Artist: Ed Sheeran</p>
             </li>
             <li class="song-list">
@@ -100,8 +100,8 @@
                 <p class="Artist">Artist: Camila Cabello</p>
             </li>
             <li class="song-list">
-                Die With A Smile
-                <p class="Artist">Artist: Lady Gaga</p>
+                Unforgettable
+                <p class="Artist">Artist: Swae Lee</p>
             </li>
             <li class="song-list">
                 See You Again
@@ -112,22 +112,29 @@
     <div class="music-area">
 
         <div class="music-area-card">
-            <!-- <div class="photo"> -->
-            <img src="photos/Blankspace.jpeg" alt="blankSpace" class="song-image">
-            <!-- </div> -->
-            <audio controls src="songss/Taylor Swift-Blank Space.mp3" class="song-audio"></audio>
+            <img src="photos/Blankspace.jpeg" alt="Image" class="song-image">
+            <p id="music-area-song-name">Blank Space</p>
+            <p id="music-area-artist">Tyler Swift</p>
+            <audio src="songss/Taylor Swift-Blank Space.mp3" class="song-audio"></audio>
             <input type="range" value="0" id="audio-range">
+            <div class="time-display">
+                <div class="loop"><i class="fa-solid fa-repeat"></i></div>
+                <span id="current-time">0:00</span>
+                <p id="slash">/</p>
+                <span id="total-duration">0:00</span>
+            </div>
             <div class="audio-controls">
-                <div class="reverse"></div>
-                <div class="play-pause"></div>
-                <div class="forward"></div>
+                <div class="backward"><i class="fa-solid fa-backward"></i></div>
+                <div class="play-pause"><i class="fa-solid fa-play"></i></div>
+                <div class="forward"><i class="fa-solid fa-forward"></i></div>
             </div>
 
         </div>
+        
 
 
     </div>
-    </div>
+
 
     <script src="script.js"></script>
 </body>
