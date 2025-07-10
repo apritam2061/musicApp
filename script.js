@@ -11,8 +11,6 @@ let replayBtn=document.querySelector(".loop");
 
 let ImageAnimate=document.querySelector(".song-image");
 
-
-
 replayBtn.addEventListener("click",()=>
 {
     SongAudio.loop=!SongAudio.loop;
@@ -61,10 +59,28 @@ SongAudio.addEventListener("loadedmetadata", ()=>{
 
 SongAudio.addEventListener("timeupdate",()=>{
     AudioRange.value=SongAudio.currentTime;
-    CurrentTime.textContent = formatTime(SongAudio.currentTime);
-
 });
 
 AudioRange.addEventListener("input", () => {
     SongAudio.currentTime = AudioRange.value;
+});
+
+
+// searchbar things
+let searchBar = document.querySelector("#search-bar");
+let songItems = document.querySelectorAll(".song-list");
+
+searchBar.addEventListener("input", () => {
+    let query = searchBar.value.toLowerCase();
+
+    songItems.forEach((item) => {
+        let songTitle = item.childNodes[0].nodeValue.trim().toLowerCase();
+        let artist = item.querySelector(".Artist").textContent.toLowerCase();
+
+        if (songTitle.includes(query) || artist.includes(query)) {
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    });
 });

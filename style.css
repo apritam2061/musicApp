@@ -36,6 +36,10 @@ body
     margin: 10px 2px 10px 5px;
     background-color: white;
 }
+.menuBox ul {
+    list-style-type: none;
+    padding-left: 0;
+}
 .searchIcon
 {
     display: inline-block;
@@ -121,7 +125,7 @@ background-color: rebeccapurple;
     box-shadow: 0 1rem 3rem rgb(133, 132, 132);
     border-radius: 50%;
     border: 6px solid transparent;
-    transition: transform 0.3s ease ;
+    transition: transform 0.1s linear ;
 }
 .song-image-zoom-animate
 {
