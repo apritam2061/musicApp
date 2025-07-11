@@ -1,22 +1,17 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: "poppins",sans-serif;
+    font-family: "poppins", sans-serif;
 }
-body
-{
-    display: flex;
-}
-.whole
-{
+
+body {
     display: flex;
 }
 
-.menuBox
-{
-    height: 100vh;
+.menuBox {
     width: 25%;
+    height: 100vh;
     align-self: flex-start;
     background-color: white;
     border-right: 2px solid black;
@@ -24,9 +19,15 @@ body
     white-space: nowrap;
     overflow-y: auto;
     background-color: #D3D3D3;
+    transition: width 0.5s ease;
 }
-.searchBar
+.menubox-slide
 {
+    width: 0%;
+    overflow: hidden;
+}
+
+.searchBar {
     all: unset;
     height: 35px;
     border: 2px solid black;
@@ -36,12 +37,13 @@ body
     margin: 10px 2px 10px 5px;
     background-color: white;
 }
+
 .menuBox ul {
     list-style-type: none;
     padding-left: 0;
 }
-.searchIcon
-{
+
+.searchIcon {
     display: inline-block;
     height: 35px;
     width: 35px;
@@ -49,55 +51,71 @@ body
     background-color: #f53192;
     cursor: pointer;
 }
-.searchIcon:active
-{
-background-color: rebeccapurple;
+
+.searchIcon:active {
+    background-color: rebeccapurple;
 }
-.fa-magnifying-glass
-{
+
+.fa-magnifying-glass {
     font-size: 1.5rem;
     color: white;
     position: relative;
     top: 5px;
     left: 5px;
 }
+.menu-nav
+{
+    display: flex;
+    background-color: #131921;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+}
+.fa-bars
+{
+    font-size: 1.5rem;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 7px;
+}
+.fa-bars:hover
+{
+    background-color: #27313f;
+}
 #top
 {
-    font-size: 2rem;
+    width: 100%;
     text-align: center;
-    background-color: #131921;
-    color: white;
-    padding: 0px 5px 5px 0px;
 }
-.menuBox ul
-{
+
+.menuBox ul {
     all: unset;
 }
 
-.song-list
-{
+.song-list {
     font-size: 1.2rem;
-    padding: 7px 0px 7px 10px;;
+    padding: 7px 0px 7px 10px;
     color: black;
     border-top: 1px solid black;
     cursor: pointer;
     /* background-color: #D3D3D3; */
 }
-.song-list:hover
-{
-    background-color:#222F3E ;
+
+.song-list:hover {
+    background-color: #222F3E;
     color: white;
 }
-.Artist
-{
+
+.Artist {
     font-size: 0.6rem;
     margin-top: 2px;
 }
 
-.music-area
-{
+.music-area {
     align-self: flex-end;
     height: 100vh;
+    width: 75%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -105,72 +123,70 @@ background-color: rebeccapurple;
     background: linear-gradient(to bottom, #f1f4f9, #dff1ff);
 
 }
-.music-area-card
-{
+.music-area-card {
     background-color: white;
     padding: 30px;
     width: 40%;
     border-radius: 20px;
-    background: linear-gradient(to right,#87d3e2,#ebd4a9);
+    background: linear-gradient(to right, #87d3e2, #ebd4a9);
     box-shadow: 0 1rem 3rem rgb(94, 92, 92);
 }
-.song-image
-{
+
+.song-image {
     width: 80%;
     height: auto;
     object-fit: cover;
     display: block;
-    margin:  0px auto 0px;
+    margin: 0px auto 0px;
     aspect-ratio: 1/1;
     box-shadow: 0 1rem 3rem rgb(133, 132, 132);
     border-radius: 50%;
     border: 6px solid transparent;
-    transition: transform 0.1s linear ;
+    transition: transform 0.1s linear;
 }
-.song-image-zoom-animate
-{
+
+.song-image-zoom-animate {
     transform: scale3d(1.1, 1.1, 1);
 }
-.song-image-rotate-animate
-{
+
+.song-image-rotate-animate {
     animation: rotation 30s linear infinite;
 
 }
-@keyframes rotation
-{
-    from{
+
+@keyframes rotation {
+    from {
         transform: rotate(0deg);
     }
-    to{
+
+    to {
         transform: rotate(360deg);
     }
 }
-#music-area-song-name
-{
-    color: rgba(255,255,255,1);
+
+#music-area-song-name {
+    color: rgba(255, 255, 255, 1);
     font-size: 1.5rem;
     text-align: center;
     margin-top: 30px;
     margin-bottom: 0px;
     height: 35px;
 }
-#music-area-artist
-{
-    color: rgba(255,255,255,0.8);
+
+#music-area-artist {
+    color: rgba(255, 255, 255, 0.8);
     font-size: 1rem;
     text-align: center;
     margin-top: 0px;
 }
 
-.song-audio
-{
+.song-audio {
     display: block;
-    margin:  0px auto 0px;
+    margin: 0px auto 0px;
     margin-top: 20px;
 }
 
-#audio-range
-{
+#audio-range {
     appearance: none;
     display: block;
     width: 70%;
@@ -180,8 +196,8 @@ background-color: rebeccapurple;
     border-radius: 20px;
     cursor: pointer;
 }
-#audio-range::-webkit-slider-thumb
-{
+
+#audio-range::-webkit-slider-thumb {
     appearance: none;
     background: #f53192;
     width: 15px;
@@ -190,11 +206,11 @@ background-color: rebeccapurple;
     border: 1px solid white;
     box-shadow: 0 1rem 3rem rgb(56, 55, 55);
 }
-#audio-range::-webkit-slider-thumb:hover
-{
+
+#audio-range::-webkit-slider-thumb:hover {
     width: 20px;
-    height: 20px;  
-    border-width: 2px;  
+    height: 20px;
+    border-width: 2px;
 }
 
 .time-display {
@@ -205,32 +221,30 @@ background-color: rebeccapurple;
     font-size: 0.8rem;
     color: #333;
 }
-#slash
-{
+
+#slash {
     margin: 0px 1px 0px 1px;
 }
 
-.loop
-{
+.loop {
     color: black;
     cursor: pointer;
     margin-right: 10px;
     filter: opacity(0.5);
 }
-.loop-active
-{
+
+.loop-active {
     filter: opacity(1);
 }
 
-.audio-controls
-{
+.audio-controls {
     display: flex;
     justify-content: center;
     gap: 35px;
     font-size: 1rem;
 }
-.audio-controls div
-{
+
+.audio-controls div {
     width: 50px;
     height: 50px;
     background-color: white;
@@ -243,8 +257,8 @@ background-color: rebeccapurple;
     box-shadow: 0 1rem 3rem rgb(139, 138, 138);
     margin: 20px 0px 20px 0px;
 }
-.audio-controls .play-pause 
-{
+
+.audio-controls .play-pause {
     font-size: 1.2rem;
     transform: scale(1.5);
     color: white;
