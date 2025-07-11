@@ -68,12 +68,12 @@ AudioRange.addEventListener("input", () => {
 
 // searchbar things
 let searchBar = document.querySelector("#search-bar");
-let songItems = document.querySelectorAll(".song-list");
+let songListItems = document.querySelectorAll(".song-list");
 
 searchBar.addEventListener("input", () => {
     let query = searchBar.value.toLowerCase();
 
-    songItems.forEach((item) => {
+    songListItems.forEach((item) => {
         let songTitle = item.childNodes[0].nodeValue.trim().toLowerCase();
         let artist = item.querySelector(".Artist").textContent.toLowerCase();
 
@@ -84,3 +84,36 @@ searchBar.addEventListener("input", () => {
         }
     });
 });
+
+
+let songTitleText=document.querySelector("#music-area-song-name");
+let ArtistText=document.querySelector("#music-area-artist");
+
+songListItems.forEach((item)=>{
+    item.addEventListener("click",()=>{
+        let newSrc=item.getAttribute("data-src");
+        let newImg=item.getAttribute("data-img");
+        let newTitle=item.getAttribute("data-title");
+        let newArtist=item.getAttribute("data-artist");
+   
+
+    SongAudio.src=newSrc;
+    SongAudio.load();
+    SongAudio.play();
+
+    PlayPauseIcon.classList.remove("fa-play");
+    PlayPauseIcon.classList.add("fa-pause");
+
+    songTitleText.textContent = newTitle;
+    ArtistText.textContent = newArtist;
+
+    ImageAnimate.src = newImg;
+
+    ImageAnimate.classList.remove("song-image-rotate-animate");
+    void ImageAnimate.offsetWidth;
+    ImageAnimate.classList.add("song-image-rotate-animate");
+
+ });
+
+});
+
