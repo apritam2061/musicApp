@@ -10,7 +10,7 @@ body {
 }
 
 .menuBox {
-    width: 25%;
+    width: 30%;
     height: 100vh;
     align-self: flex-start;
     background-color: white;
@@ -71,21 +71,30 @@ body {
     color: white;
     font-size: 2rem;
 }
-.fa-bars
-{
+.menu-toggle {
+    position: fixed;
+    top: 5px;
+    left: 10px;
+}
+
+.fa-bars{
     font-size: 1.5rem;
-    margin-left: 5px;
     cursor: pointer;
+    color: white;
+    background-color: #131921;
+    padding: 10px;
     border-radius: 50%;
-    padding: 7px;
+    transition: background-color 0.3s ease;
 }
 .fa-bars:hover
 {
-    background-color: #27313f;
+background-color: #27313f;
 }
+
 #top
 {
     width: 100%;
+    height: 3.6rem;
     text-align: center;
 }
 
@@ -131,7 +140,6 @@ body {
     background: linear-gradient(to right, #87d3e2, #ebd4a9);
     box-shadow: 0 1rem 3rem rgb(94, 92, 92);
 }
-
 .song-image {
     width: 80%;
     height: auto;
@@ -265,3 +273,6 @@ body {
     background-color: #f53192;
 
 }
+
+
+

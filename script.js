@@ -105,10 +105,9 @@ songListItems.forEach((item) => {
   });
 });
 
-
+// sliding menu bar
 let menuBar=document.querySelector(".fa-bars");
 let menuBox=document.querySelector(".menuBox")
-let musicArea=document.querySelector(".music-area");
 
 menuBar.addEventListener("click",()=>{
   menuBox.classList.toggle("menubox-slide");
