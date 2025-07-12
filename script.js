@@ -1,4 +1,4 @@
-// muscic arera logics 
+// muscic arera logics
 let PlayPauseBtn = document.querySelector(".play-pause");
 let PlayPauseIcon = document.querySelector(".play-pause i");
 
@@ -44,13 +44,23 @@ SongAudio.addEventListener("ended", () => {
   ImageAnimate.classList.remove("song-image-rotate-animate");
 });
 
-SongAudio.addEventListener("loadedmetadata", () => {
+if (SongAudio.readyState >= 1) {
   AudioRange.max = SongAudio.duration;
   TotalDuration.textContent = formatTime(SongAudio.duration);
-});
+  AudioRange.value = SongAudio.currentTime;
+  CurrentTime.textContent = formatTime(SongAudio.currentTime);
+} else {
+  SongAudio.addEventListener("loadedmetadata", () => {
+    AudioRange.max = SongAudio.duration;
+    TotalDuration.textContent = formatTime(SongAudio.duration);
+    AudioRange.value = SongAudio.currentTime;
+    CurrentTime.textContent = formatTime(SongAudio.currentTime);
+  });
+}
 
 SongAudio.addEventListener("timeupdate", () => {
   AudioRange.value = SongAudio.currentTime;
+  CurrentTime.textContent = formatTime(SongAudio.currentTime);
 });
 
 AudioRange.addEventListener("input", () => {
@@ -96,7 +106,6 @@ songListItems.forEach((item) => {
 
     songTitleText.textContent = newTitle;
     ArtistText.textContent = newArtist;
-
     ImageAnimate.src = newImg;
 
     ImageAnimate.classList.remove("song-image-rotate-animate");
@@ -106,9 +115,54 @@ songListItems.forEach((item) => {
 });
 
 // sliding menu bar
-let menuBar=document.querySelector(".fa-bars");
-let menuBox=document.querySelector(".menuBox")
+let menuBar = document.querySelector(".fa-bars");
+let menuBox = document.querySelector(".menuBox");
 
-menuBar.addEventListener("click",()=>{
+menuBar.addEventListener("click", () => {
   menuBox.classList.toggle("menubox-slide");
+});
+
+// forward and reverse button application by indexing each song
+let songs = Array.from(document.querySelectorAll(".song-list"));
+let currentSongIndex = 0;
+
+function playSongByIndex(index) {
+  const item = songs[index];
+  if (!item) return;
+
+  let newSrc = item.getAttribute("data-src");
+  let newImg = item.getAttribute("data-img");
+  let newTitle = item.getAttribute("data-title");
+  let newArtist = item.getAttribute("data-artist");
+
+  SongAudio.src = newSrc;
+  SongAudio.load();
+  SongAudio.play();
+
+  PlayPauseIcon.classList.remove("fa-play");
+  PlayPauseIcon.classList.add("fa-pause");
+
+  songTitleText.textContent = newTitle;
+  ArtistText.textContent = newArtist;
+  ImageAnimate.src = newImg;
+
+  ImageAnimate.classList.remove("song-image-rotate-animate");
+  void ImageAnimate.offsetWidth;
+  ImageAnimate.classList.add("song-image-rotate-animate");
+}
+
+songListItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    currentSongIndex = songs.indexOf(item);
+  });
+});
+
+document.querySelector(".forward").addEventListener("click", () => {
+  currentSongIndex = (currentSongIndex + 1) % songs.length;
+  playSongByIndex(currentSongIndex);
+});
+
+document.querySelector(".backward").addEventListener("click", () => {
+  currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+  playSongByIndex(currentSongIndex);
 });
